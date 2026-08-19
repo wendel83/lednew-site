@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lednew Odontologia — Especialista em Implantes Dentários | Santo André, SP</title>
+<meta name="description" content="Implantodontia em Santo André - SP. Planejamento 3D, cirurgia guiada e reabilitação com implantes dentários. Agende sua avaliação.">
+<link rel="canonical" href="https://wendel83.github.io/lednew-site/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://wendel83.github.io/lednew-site/">
+<meta property="og:title" content="Lednew Odontologia — Especialista em Implantes Dentários">
+<meta property="og:description" content="Implantodontia em Santo André, SP. Planejamento 3D e reabilitação com implantes dentários. Agende sua avaliação.">
+<meta property="og:image" content="https://wendel83.github.io/lednew-site/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lednew Odontologia — Especialista em Implantes Dentários">
+<meta name="twitter:description" content="Implantodontia em Santo André, SP. Planejamento 3D e reabilitação com implantes dentários.">
+<meta name="twitter:image" content="https://wendel83.github.io/lednew-site/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: #0B1D2E;
+    --ink-panel: #10263A;
+    --ink-panel-2: #142E45;
+    --line: rgba(241,239,232,0.14);
+    --porcelain: #F1EFE8;
+    --muted: #93A8B6;
+    --blue-1: #2E8FE0;
+    --blue-2: #1B4F8C;
+    --coral: #FF8A5B;
+    --coral-dim: #E67849;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink);
+    color:var(--porcelain);
+    font-family:'Source Serif 4', serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3, .display{
+    font-family:'Space Grotesk', sans-serif;
+    letter-spacing:-0.01em;
+  }
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+    letter-spacing:0.02em;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{display:block; max-width:100%;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 28px;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+  }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:var(--porcelain);
+    border-bottom:1px solid rgba(11,29,46,0.08);
+  }
+  .header-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 28px;
+    max-width:1180px; margin:0 auto;
+  }
+  .brand{display:flex; align-items:center; gap:12px;}
+  .brand img{height:40px; width:auto;}
+  .header-cta{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--ink);
+    color:var(--porcelain);
+    padding:11px 20px;
+    border-radius:999px;
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:600;
+    font-size:14px;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .header-cta:hover{background:var(--blue-2); transform:translateY(-1px);}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    padding:88px 0 96px;
+    background:
+      radial-gradient(ellipse 900px 500px at 82% 8%, rgba(46,143,224,0.20), transparent 60%),
+      var(--ink);
+    border-bottom:1px solid var(--line);
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap:56px;
+    align-items:start;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--blue-1);
+    display:flex; align-items:center; gap:10px;
+    margin-bottom:22px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:26px; height:1px;
+    background:var(--blue-1);
+  }
+  .hero h1{
+    font-size:clamp(34px, 4.6vw, 56px);
+    font-weight:600;
+    line-height:1.08;
+    color:var(--porcelain);
+    max-width:11.5ch;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--blue-1);
+  }
+  .hero p.lead{
+    margin-top:22px;
+    font-size:18px;
+    color:var(--muted);
+    max-width:46ch;
+  }
+  .hero-ctas{
+    margin-top:34px;
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .btn-primary{
+    display:inline-flex; align-items:center; gap:10px;
+    background:var(--coral);
+    color:var(--ink);
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    font-size:15.5px;
+    padding:15px 26px;
+    border-radius:10px;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .btn-primary:hover{background:var(--coral-dim); transform:translateY(-2px);}
+  .btn-secondary{
+    display:inline-flex; align-items:center; gap:8px;
+    border:1px solid var(--line);
+    color:var(--porcelain);
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:600;
+    font-size:15px;
+    padding:14px 22px;
+    border-radius:10px;
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+  .btn-secondary:hover{border-color:var(--blue-1); background:rgba(46,143,224,0.08);}
+
+  .hero-meta{
+    margin-top:34px;
+    display:flex; gap:26px; flex-wrap:wrap;
+  }
+  .hero-meta div{font-size:13px; color:var(--muted);}
+  .hero-meta strong{display:block; color:var(--porcelain); font-family:'Space Grotesk',sans-serif; font-size:14px; margin-bottom:2px;}
+
+  /* ---------- BLUEPRINT DIAGRAM (signature) ---------- */
+  .blueprint{
+    position:relative;
+    background:var(--ink-panel);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:26px;
+  }
+  .blueprint-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--blue-1);
+    margin-bottom:14px;
+    letter-spacing:0.06em;
+  }
+  .blueprint svg{width:100%; height:auto; display:block;}
+  .bp-line{
+    fill:none;
+    stroke:var(--blue-1);
+    stroke-width:1.6;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-dasharray:900;
+    stroke-dashoffset:900;
+    animation: draw 2.1s ease forwards 0.3s;
+  }
+  .bp-line.slow{ animation-delay:0.9s; }
+  .bp-fill{
+    fill:rgba(46,143,224,0.10);
+    opacity:0;
+    animation: fadein 1s ease forwards 1.6s;
+  }
+  @keyframes draw{ to{ stroke-dashoffset:0; } }
+  @keyframes fadein{ to{ opacity:1; } }
+  .bp-dim{
+    stroke:var(--muted);
+    stroke-width:1;
+    opacity:0.6;
+  }
+  .bp-tick{
+    fill:var(--muted);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:9.5px;
+  }
+  .bp-callout{
+    fill:var(--porcelain);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px;
+  }
+  .bp-dot{ fill:var(--coral); }
+
+  /* ---------- SECTION SHARED ---------- */
+  section{padding:88px 0;}
+  .section-head{max-width:640px; margin-bottom:52px;}
+  .section-head .eyebrow{margin-bottom:16px;}
+  .section-head h2{
+    font-size:clamp(26px, 3vw, 36px);
+    font-weight:600;
+    color:var(--porcelain);
+  }
+  .section-head p{
+    margin-top:14px;
+    color:var(--muted);
+    font-size:16.5px;
+  }
+
+  /* ---------- WHY / STATS ---------- */
+  .why{background:var(--ink-panel); border-bottom:1px solid var(--line);}
+  .why-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    border-radius:14px;
+    overflow:hidden;
+  }
+  .why-item{
+    background:var(--ink-panel);
+    padding:32px 28px;
+  }
+  .why-item .num{
+    font-family:'IBM Plex Mono', monospace;
+    color:var(--blue-1);
+    font-size:13px;
+    margin-bottom:14px;
+  }
+  .why-item h3{font-size:18px; font-weight:600; margin-bottom:10px; color:var(--porcelain);}
+  .why-item p{font-size:14.5px; color:var(--muted);}
+
+  /* ---------- PROCESS ---------- */
+  .process-list{
+    display:grid;
+    gap:0;
+  }
+  .process-item{
+    display:grid;
+    grid-template-columns: 90px 1fr;
+    gap:24px;
+    padding:30px 0;
+    border-top:1px solid var(--line);
+    align-items:start;
+  }
+  .process-item:last-child{border-bottom:1px solid var(--line);}
+  .process-num{
+    font-family:'IBM Plex Mono', monospace;
+    color:var(--blue-1);
+    font-size:14px;
+    padding-top:4px;
+  }
+  .process-item h3{font-size:20px; font-weight:600; margin-bottom:8px; color:var(--porcelain);}
+  .process-item p{color:var(--muted); font-size:15.5px; max-width:56ch;}
+
+  /* ---------- ABOUT / DIFERENCIAIS ---------- */
+  .about{background:var(--ink-panel);}
+  .about-grid{
+    display:grid;
+    grid-template-columns: 1fr;
+    max-width:820px;
+  }
+  .diferenciais{list-style:none; margin-top:30px; display:grid; grid-template-columns:repeat(2,1fr); gap:20px;}
+  .diferenciais li{
+    background:var(--ink);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:24px 26px;
+  }
+  .diferenciais li strong{
+    display:flex; align-items:flex-start; gap:12px;
+    font-family:'Space Grotesk', sans-serif;
+    font-size:16.5px;
+    font-weight:600;
+    color:var(--porcelain);
+    margin-bottom:10px;
+  }
+  .diferenciais li strong::before{
+    content:"";
+    flex:none;
+    width:8px; height:8px;
+    margin-top:6px;
+    border-radius:2px;
+    background:var(--coral);
+    transform:rotate(45deg);
+  }
+  .diferenciais li{
+    font-size:14.5px;
+    color:var(--muted);
+  }
+
+  /* ---------- CTA / CONTACT ---------- */
+  .cta-section{
+    position:relative;
+    padding:96px 0;
+    background:
+      radial-gradient(ellipse 700px 400px at 18% 100%, rgba(46,143,224,0.18), transparent 60%),
+      var(--ink);
+  }
+  .cta-box{
+    max-width:760px;
+  }
+  .cta-box h2{
+    font-size:clamp(28px,3.6vw,42px);
+    font-weight:600;
+    color:var(--porcelain);
+    max-width:14ch;
+  }
+  .cta-box p{margin-top:16px; color:var(--muted); font-size:17px; max-width:52ch;}
+  .contact-grid{
+    margin-top:44px;
+    display:grid;
+    grid-template-columns: repeat(3, auto);
+    gap:40px;
+  }
+  .contact-item .lbl{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--blue-1);
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    margin-bottom:8px;
+  }
+  .contact-item .val{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:16px;
+    color:var(--porcelain);
+    font-weight:500;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    border-top:1px solid var(--line);
+    padding:34px 0;
+  }
+  .footer-inner{
+    display:flex; justify-content:space-between; align-items:center;
+    flex-wrap:wrap; gap:16px;
+  }
+  .footer-inner img{height:26px; opacity:0.85;}
+  footer p{font-size:12.5px; color:var(--muted); font-family:'IBM Plex Mono', monospace;}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 860px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero{padding:56px 0 64px;}
+    .why-grid{grid-template-columns:1fr;}
+    .about-grid{grid-template-columns:1fr;}
+    .diferenciais{grid-template-columns:1fr;}
+    .process-item{grid-template-columns:56px 1fr;}
+    .contact-grid{grid-template-columns:1fr; gap:22px;}
+    .header-cta span.full{display:none;}
+    section{padding:60px 0;}
+    .footer-inner{flex-direction:column; align-items:flex-start;}
+  }
+
+  /* focus visibility */
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--coral);
+    outline-offset:3px;
+    border-radius:4px;
+  }
+
+  /* ---------- IMPLANT CHECK INTEGRATION ---------- */
+  .implant-check-cta{
+    padding:64px 0;
+    background:var(--ink-panel);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+
+  .implant-check-card{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:34px;
+    padding:34px;
+    border:1px solid var(--line);
+    border-radius:16px;
+    background:var(--ink);
+  }
+
+  .implant-check-copy{max-width:720px;}
+
+  .implant-check-eyebrow{
+    display:block;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:.12em;
+    color:var(--blue-1);
+    margin-bottom:10px;
+  }
+
+  .implant-check-card h2{
+    font-size:clamp(25px,3vw,35px);
+    line-height:1.12;
+    color:var(--porcelain);
+    max-width:20ch;
+  }
+
+  .implant-check-card p{
+    margin-top:12px;
+    color:var(--muted);
+    font-size:16px;
+    max-width:62ch;
+  }
+
+  .implant-check-btn{
+    flex:none;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    background:var(--coral);
+    color:var(--ink);
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    font-size:15px;
+    padding:15px 23px;
+    border:0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:background .2s ease, transform .2s ease;
+  }
+
+  .implant-check-btn:hover{
+    background:var(--coral-dim);
+    transform:translateY(-2px);
+  }
+
+  .implant-check-overlay{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    background:rgba(4,12,20,.92);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+    display:none;
+  }
+
+  .implant-check-overlay.is-open{display:block;}
+
+  .implant-check-shell{
+    position:absolute;
+    inset:12px;
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:18px;
+    overflow:hidden;
+    background:#0B1D2E;
+    box-shadow:0 30px 100px rgba(0,0,0,.5);
+  }
+
+  .implant-check-frame{
+    width:100%;
+    height:100%;
+    border:0;
+    background:#0B1D2E;
+  }
+
+  .implant-check-close{
+    position:absolute;
+    top:22px;
+    right:22px;
+    z-index:10001;
+    width:42px;
+    height:42px;
+    border-radius:999px;
+    border:1px solid rgba(255,255,255,.18);
+    background:rgba(11,29,46,.92);
+    color:#F1EFE8;
+    font-size:24px;
+    line-height:1;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  body.implant-check-open{overflow:hidden;}
+
+  @media(max-width:760px){
+    .implant-check-cta{padding:48px 0;}
+    .implant-check-card{
+      flex-direction:column;
+      align-items:flex-start;
+      padding:26px 22px;
+    }
+    .implant-check-btn{width:100%;}
+    .implant-check-shell{
+      inset:0;
+      border-radius:0;
+      border:0;
+    }
+    .implant-check-close{
+      top:12px;
+      right:12px;
+      width:40px;
+      height:40px;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <img src="logo.png" alt="Lednew Odontologia">
+    </div>
+    <a class="header-cta" href="https://wa.me/5511947591234?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20implante." target="_blank" rel="noopener">
+      <span class="full">Agendar avaliação</span><span class="short" style="display:none;">Agendar</span> →
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="blueprint">
+      <div class="blueprint-label">
+        <span>ESQUEMA · REABILITAÇÃO COM IMPLANTE</span>
+      </div>
+      <svg viewBox="0 0 360 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagrama esquemático de um implante dentário posicionado no osso, com coroa protética.">
+        <!-- gum line -->
+        <path class="bp-line bp-dim" d="M20 120 C 90 108, 270 108, 340 120" stroke-dasharray="4 5" style="animation-delay:0.1s;"/>
+        <!-- bone block -->
+        <rect class="bp-fill" x="40" y="120" width="280" height="150" rx="6"/>
+        <path class="bp-line" d="M40 120 H320 V270 H40 Z"/>
+        <!-- implant screw body -->
+        <path class="bp-line slow" d="M164 132 h32 v18 h-32 z"/>
+        <path class="bp-line slow" d="M170 150 L170 232 M190 150 L190 232 M172 158 H188 M172 172 H188 M172 186 H188 M172 200 H188 M172 214 H188" />
+        <path class="bp-line slow" d="M170 232 L180 246 L190 232 Z"/>
+        <!-- abutment -->
+        <path class="bp-line slow" d="M168 118 L172 132 M192 118 L188 132" />
+        <!-- crown -->
+        <path class="bp-line slow" d="M156 84 C156 70, 204 70, 204 84 C 204 100, 196 118, 180 118 C 164 118, 156 100, 156 84 Z"/>
+        <!-- adjacent teeth (context) -->
+        <path class="bp-line bp-dim" d="M116 92 C116 80, 148 80, 148 92 C148 104, 140 118, 132 118 C124 118, 116 104, 116 92 Z"/>
+        <path class="bp-line bp-dim" d="M212 92 C212 80, 244 80, 244 92 C244 104, 236 118, 228 118 C220 118, 212 104, 212 92 Z"/>
+        <!-- callout dot + measurement -->
+        <circle class="bp-dot" cx="190" cy="180" r="2.6"/>
+        <line class="bp-line bp-dim" x1="190" y1="180" x2="248" y2="180"/>
+        <text class="bp-callout" x="252" y="177">Ø 4.0 mm</text>
+        <text class="bp-callout" x="252" y="192">C 11.5 mm</text>
+        <text class="bp-callout" x="155" y="191" text-anchor="middle" transform="rotate(-90 155 191)">IMPLANTE DENTÁRIO</text>
+
+        <circle class="bp-dot" cx="180" cy="100" r="2.6"/>
+        <line class="bp-line bp-dim" x1="180" y1="100" x2="60" y2="60"/>
+        <text class="bp-callout" x="16" y="55">coroa</text>
+        <text class="bp-callout" x="10" y="68">protética</text>
+
+        <line class="bp-line bp-dim" x1="40" y1="285" x2="320" y2="285"/>
+      </svg>
+    </div>
+
+    <div>
+      <div class="eyebrow">Implantodontia · Santo André, SP</div>
+      <h1>Seu sorriso reconstruído com <em>precisão clínica</em> e planejamento 3D.</h1>
+      <p class="lead">Reabilitação com implantes dentários da avaliação à prótese final, com foco em segurança, previsibilidade e conforto.</p>
+      <div class="hero-ctas">
+        <a class="btn-primary" href="https://wa.me/5511947591234?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20implante." target="_blank" rel="noopener">
+          Falar no WhatsApp
+        </a>
+        <a class="btn-secondary" href="#processo">Ver como funciona</a>
+      </div>
+      <div class="hero-meta">
+        <div><strong>Especialidade</strong>Implantes dentários</div>
+        <div><strong>Atendimento</strong>Santo André – SP</div>
+        <div><strong>Contato</strong>(11) 94759-1234</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Por que planejamento importa</div>
+      <h2>Cada implante é um projeto de engenharia biológica.</h2>
+      <p>Diâmetro, comprimento e posicionamento são definidos a partir de exame de imagem antes de qualquer procedimento — não durante ele.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="num mono">01</div>
+        <h3>Diagnóstico por imagem</h3>
+        <p>Avaliação da densidade e altura óssea antes da cirurgia, reduzindo imprevistos.</p>
+      </div>
+      <div class="why-item">
+        <div class="num mono">02</div>
+        <h3>Planejamento individual</h3>
+        <p>Diâmetro e comprimento do implante escolhidos para a anatomia de cada paciente.</p>
+      </div>
+      <div class="why-item">
+        <div class="num mono">03</div>
+        <h3>Acompanhamento clínico</h3>
+        <p>Retornos programados do pós-operatório até a entrega da prótese final.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="processo">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Como funciona</div>
+      <h2>Quatro etapas, do diagnóstico ao sorriso pronto.</h2>
+    </div>
+    <div class="process-list">
+      <div class="process-item">
+        <div class="process-num mono">01</div>
+        <div>
+          <h3>Avaliação inicial</h3>
+          <p>Anamnese completa, exame clínico e solicitação de imagem para avaliar a região a ser reabilitada.</p>
+        </div>
+      </div>
+      <div class="process-item">
+        <div class="process-num mono">02</div>
+        <div>
+          <h3>Planejamento 3D</h3>
+          <p>Definição da posição, diâmetro e comprimento do implante com base no exame de imagem.</p>
+        </div>
+      </div>
+      <div class="process-item">
+        <div class="process-num mono">03</div>
+        <div>
+          <h3>Cirurgia</h3>
+          <p>Instalação do implante seguindo o planejamento, com protocolo de conforto e segurança.</p>
+        </div>
+      </div>
+      <div class="process-item">
+        <div class="process-num mono">04</div>
+        <div>
+          <h3>Prótese final</h3>
+          <p>Após o período de osseointegração, confecção e instalação da coroa protética.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="implant-check-cta" id="avaliacao-implante">
+  <div class="wrap">
+    <div class="implant-check-card">
+      <div class="implant-check-copy">
+        <span class="implant-check-eyebrow">AVALIAÇÃO INICIAL GRATUITA</span>
+        <h2>Não sabe se o implante pode ser uma opção para você?</h2>
+        <p>Responda 10 perguntas rápidas e receba uma orientação preliminar sobre fatores que podem influenciar seu tratamento.</p>
+      </div>
+      <button class="implant-check-btn" type="button" onclick="openImplantCheck()">
+        Fazer minha avaliação →
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap about-grid">
+    <div>
+      <div class="eyebrow">Diferenciais</div>
+      <h2 style="font-size:clamp(24px,2.8vw,32px); color:var(--porcelain); font-weight:600;">Por que tratar seu implante aqui</h2>
+      <ul class="diferenciais">
+        <li><strong>Planejamento Digital 3D</strong>Mais precisão antes de iniciar o procedimento.</li>
+        <li><strong>Foco em Implantes Dentários</strong>De um único dente a reabilitações completas.</li>
+        <li><strong>Tratamento do Início ao Fim</strong>Planejamento, cirurgia, prótese e acompanhamento em um só lugar.</li>
+        <li><strong>Dentes Fixos em Menor Tempo</strong>Implante e carga imediata quando houver indicação clínica.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="contato">
+  <div class="wrap">
+    <div class="cta-box">
+      <div class="eyebrow">Agende sua avaliação</div>
+      <h2>Dê o primeiro passo para recuperar seu sorriso.</h2>
+      <p>Fale agora pelo WhatsApp e marque uma avaliação para saber se você já pode iniciar o tratamento com implante.</p>
+      <div class="hero-ctas">
+        <a class="btn-primary" href="https://wa.me/5511947591234?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20implante." target="_blank" rel="noopener">
+          Falar no WhatsApp
+        </a>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <div class="lbl">Local</div>
+          <div class="val">Santo André – SP</div>
+        </div>
+        <div class="contact-item">
+          <div class="lbl">WhatsApp</div>
+          <div class="val">(11) 94759-1234</div>
+        </div>
+        <div class="contact-item">
+          <div class="lbl">Especialidade</div>
+          <div class="val">Implantes dentários</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <img src="logo.png" alt="Lednew Odontologia">
+    <p>© 2026 LEDNEW ODONTOLOGIA — SANTO ANDRÉ, SP</p>
+  </div>
+</footer>
+
+
+<div class="implant-check-overlay" id="implantCheckOverlay" aria-hidden="true">
+  <div class="implant-check-shell" role="dialog" aria-modal="true" aria-label="Lednew Implant Check">
+    <button class="implant-check-close" type="button" aria-label="Fechar avaliação" onclick="closeImplantCheck()">×</button>
+    <iframe
+      id="implantCheckFrame"
+      class="implant-check-frame"
+      title="Lednew Implant Check"
+      src="implant-check.html"
+      loading="lazy"
+      allow="clipboard-write"
+    ></iframe>
+  </div>
+</div>
+
+<script>
+  function openImplantCheck(){
+    const overlay = document.getElementById('implantCheckOverlay');
+    overlay.classList.add('is-open');
+    overlay.setAttribute('aria-hidden','false');
+    document.body.classList.add('implant-check-open');
+  }
+
+  function closeImplantCheck(){
+    const overlay = document.getElementById('implantCheckOverlay');
+    overlay.classList.remove('is-open');
+    overlay.setAttribute('aria-hidden','true');
+    document.body.classList.remove('implant-check-open');
+  }
+
+  document.addEventListener('keydown', function(event){
+    if(event.key === 'Escape'){
+      closeImplantCheck();
+    }
+  });
+
+  document.getElementById('implantCheckOverlay').addEventListener('click', function(event){
+    if(event.target === this){
+      closeImplantCheck();
+    }
+  });
+</script>
+
+</body>
+</html>
