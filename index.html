@@ -170,12 +170,15 @@
 
   /* ---------- FOOTER ---------- */
   footer{background:var(--ink-2); color:var(--muted-2);}
-  .footer-top{display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,200px),1fr)); gap:40px; padding:clamp(48px,7vw,64px) 0 40px; border-bottom:1px solid rgba(255,255,255,0.10);}
-  .footer-col{display:flex; flex-direction:column; gap:14px; font-size:14.5px;}
+  .footer-top{display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,200px),1fr)); gap:44px; padding:clamp(48px,7vw,64px) 0 44px; border-bottom:1px solid rgba(255,255,255,0.10);}
+  .footer-col{display:flex; flex-direction:column; gap:16px; font-size:14.5px;}
   .footer-col img{height:38px; width:fit-content; background:var(--white); padding:6px 12px; border-radius:10px;}
-  .footer-col p{font-size:14px; line-height:1.6; margin:0; max-width:32ch; color:var(--muted-2);}
-  .footer-col .lbl{font-weight:800; color:var(--white); font-size:14px; letter-spacing:0.06em; text-transform:uppercase;}
+  .footer-col p{font-size:14px; line-height:1.65; margin:0; max-width:32ch; color:var(--muted-2);}
+  .footer-col .lbl{font-weight:800; color:var(--white); font-size:13px; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:2px;}
   .footer-col a{color:var(--muted-2);}
+  .footer-col a:hover{color:var(--white);}
+  .footer-block{display:flex; flex-direction:column; gap:6px;}
+  .footer-block .value{font-size:14px; line-height:1.65; color:var(--muted-2);}
   .footer-bottom{padding:24px 0 40px; font-size:13px; color:var(--muted-3); display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;}
 
   /* ---------- WHATSAPP FLOAT ---------- */
@@ -413,17 +416,27 @@
       </div>
       <div class="footer-col">
         <div class="lbl">Contato</div>
-        <a href="https://wa.me/5511947591234" target="_blank" rel="noopener">WhatsApp: +55 (11) 94759-1234</a>
-        <span style="line-height:1.6;">Rua Giovanni Battista Pirelli, 271<br>Vila Homero Thon, Santo André – SP</span>
+        <div class="footer-block">
+          <a href="https://wa.me/5511947591234" target="_blank" rel="noopener">WhatsApp: (11) 94759-1234</a>
+        </div>
+        <div class="footer-block">
+          <span class="value">Rua Giovanni Battista Pirelli, 271<br>Vila Homero Thon, Santo André – SP</span>
+        </div>
       </div>
       <div class="footer-col">
         <div class="lbl">Atendimento</div>
-        <span style="font-family:monospace; font-size:13px;">09hs às 19hs</span>
-        <a href="https://www.google.com/maps/place/?q=place_id:ChIJPcN4kxdpzpQR9_1QERl69Jk" target="_blank" rel="noopener">Ver no Google Maps</a>
+        <div class="footer-block">
+          <span class="value">Seg a Sex: 9h às 20h<br>Sáb: 9h às 14h</span>
+        </div>
+        <div class="footer-block">
+          <a href="https://www.google.com/maps/search/?api=1&query=LEDNEW+Odontologia&query_place_id=ChIJPcN4kxdpzpQR9_1QERl69Jk" target="_blank" rel="noopener">Ver no Google Maps →</a>
+        </div>
       </div>
       <div class="footer-col">
         <div class="lbl">Institucional</div>
-        <span style="font-family:monospace; font-size:13px;">CROSP 111386</span>
+        <div class="footer-block">
+          <span class="value">CROSP 111386<br>CNPJ 57.841.806/0001-20</span>
+        </div>
       </div>
     </div>
     <div class="footer-bottom">
