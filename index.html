@@ -66,6 +66,13 @@
   nav{display:flex; align-items:center; gap:clamp(14px,2.2vw,28px); font-size:15px; font-weight:600; color:var(--muted); flex-wrap:wrap;}
   nav a{color:var(--muted);}
   nav a:hover{color:var(--blue);}
+  .restricted-area-link{
+    display:inline-flex; align-items:center; justify-content:center;
+    color:var(--blue-dark); border:1px solid var(--line); background:rgba(255,255,255,0.72);
+    font-size:14px; font-weight:700; padding:9px 14px; border-radius:999px;
+    transition:color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  }
+  .restricted-area-link:hover{color:var(--blue); border-color:rgba(29,111,209,0.28); background:var(--blue-tint);}
   .header-cta{font-size:15px; padding:11px 20px;}
 
   /* ---------- HERO ---------- */
@@ -201,6 +208,7 @@
   /* ---------- RESPONSIVE ---------- */
   @media (max-width:760px){
     .header-cta span.full{display:none;}
+    .restricted-area-link{font-size:13px; padding:8px 12px;}
     .triagem-card{flex-direction:column; align-items:flex-start; padding:26px 22px;}
     .triagem-card .btn{width:100%; justify-content:center;}
     .porque .section-head{text-align:center; margin-left:auto; margin-right:auto;}
@@ -220,6 +228,7 @@
       <a href="#como-funciona">Como funciona</a>
       <a href="#faq">Dúvidas</a>
     </nav>
+    <a class="restricted-area-link" href="https://sistemalednew.netlify.app/sistema-cadastro-pacientes.html" target="_blank" rel="noopener noreferrer">Área Restrita</a>
     <a class="btn header-cta" href="https://wa.me/5511947591234?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Lednew%20Odontologia." target="_blank" rel="noopener">
       <span class="full">Agendar avaliação</span><span class="short" style="display:none;">Agendar</span>
     </a>

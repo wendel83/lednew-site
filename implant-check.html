@@ -403,7 +403,20 @@
     </footer>
   </div>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
+const SUPABASE_URL = "https://vzdktfjbhupdacmaixad.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ6ZGt0ZmpiaHVwZGFjbWFpeGFkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODUxNDYyMzAsImV4cCI6MjEwMDcyMjIzMH0.o89yzY4066E2TiYTlkeuNcj5x3w5Fr2LE9WJfUvVYRw";
+let implantCheckSupabase = null;
+
+try{
+  if(window.supabase){
+    implantCheckSupabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  }
+}catch(error){
+  console.error("Falha ao inicializar Supabase do Implant Check:", error);
+}
+
 const QUESTIONS = [
   {
     id:"dentalSituation",
@@ -539,6 +552,8 @@ const state = {
     boneMedicationName:""
   },
   answers:{},
+  leadSending:false,
+  leadSentKey:"",
   score:0,
   flags:{
     activeInfection:false,
@@ -798,7 +813,48 @@ function formatWhatsApp(input){
   }
 }
 
-function finish(){
+async function enviarLeadImplantCheck(){
+  if(!implantCheckSupabase){
+    console.error("Cliente Supabase do Implant Check não está disponível.");
+    return;
+  }
+
+  const payload = {
+    p_nome: state.patient.firstName || null,
+    p_telefone: state.patient.whatsapp || null,
+    p_email: null,
+    p_resultado: state.clinicalResult || null
+  };
+  const leadKey = [
+    payload.p_nome,
+    payload.p_telefone,
+    payload.p_email,
+    payload.p_resultado
+  ].join("|");
+
+  if(state.leadSending || state.leadSentKey === leadKey){
+    return;
+  }
+
+  state.leadSending = true;
+
+  try{
+    const { error } = await implantCheckSupabase.rpc("criar_lead_implant_check", payload);
+
+    if(error){
+      throw error;
+    }
+
+    state.leadSentKey = leadKey;
+    console.log("Lead do Implant Check enviado com sucesso.");
+  }catch(error){
+    console.error("Falha ao enviar lead do Implant Check:", error);
+  }finally{
+    state.leadSending = false;
+  }
+}
+
+async function finish(){
   const whatsapp = document.getElementById("whatsapp").value.trim();
   const consent = document.getElementById("consent").checked;
 
@@ -823,6 +879,7 @@ function finish(){
   calculate();
   trackEvent("completed",{result:state.clinicalResult,profile:state.treatmentProfile});
   renderResult();
+  await enviarLeadImplantCheck();
 }
 
 function calculate(){
@@ -1071,6 +1128,8 @@ function restart(){
     boneMedicationName:""
   };
   state.answers = {};
+  state.leadSending = false;
+  state.leadSentKey = "";
   state.score = 0;
   state.clinicalResult = "";
   state.treatmentProfile = "";
