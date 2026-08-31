@@ -327,6 +327,13 @@
       margin-top:12px;
     }
 
+    .validation-message{
+      display:none;
+      color:#fca5a5;
+      font-size:12px;
+      margin-top:8px;
+    }
+
     .public-result{
       margin-top:20px;
     }
@@ -400,6 +407,7 @@
 
     <footer>
       Lednew Implant Check é uma ferramenta educativa de triagem inicial. O resultado não constitui diagnóstico nem indicação cirúrgica. A decisão sobre tratamento depende de avaliação profissional individual e dos exames considerados necessários.
+      <br><a href="/politica-de-privacidade.html" style="color:var(--muted); text-decoration:underline;">Política de Privacidade</a>
     </footer>
   </div>
 
@@ -621,6 +629,11 @@ function renderName(){
     <h2>Como podemos chamar você?</h2>
     <p>Seu primeiro nome será usado apenas para personalizar sua experiência nesta avaliação.</p>
     <input id="firstName" class="field" maxlength="40" autocomplete="given-name" placeholder="Seu primeiro nome">
+    <div class="checkbox">
+      <input type="checkbox" id="implantCheckPrivacyConsent" onchange="document.getElementById('implantCheckPrivacyConsentError').style.display='none'">
+      <label for="implantCheckPrivacyConsent">Li a <a href="/politica-de-privacidade.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">Política de Privacidade</a> e concordo com o uso dos meus dados para realizar o Implant Check e permitir o contato da Lednew Odontologia.</label>
+    </div>
+    <div class="validation-message" id="implantCheckPrivacyConsentError">Para continuar, leia e concorde com a Política de Privacidade.</div>
     <div class="actions">
       <button class="btn btn-primary" onclick="saveName()">Continuar</button>
       <button class="btn btn-secondary" onclick="renderIntro()">Voltar</button>
@@ -631,8 +644,15 @@ function renderName(){
 
 function saveName(){
   const name = document.getElementById("firstName").value.trim();
+  const privacyConsent = document.getElementById("implantCheckPrivacyConsent");
+  const privacyConsentError = document.getElementById("implantCheckPrivacyConsentError");
   if(!name){
     alert("Digite seu primeiro nome para continuar.");
+    return;
+  }
+  if(!privacyConsent.checked){
+    privacyConsentError.style.display = "block";
+    privacyConsent.focus();
     return;
   }
   state.patient.firstName = name.split(/\s+/)[0];
