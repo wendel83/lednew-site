@@ -504,6 +504,45 @@
 </div>
 
 <script>
+  // ===== Captura de UTMs (atribuição de marketing) =====
+  var LEDNEW_UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'];
+
+  function lednewCapturarUTMs(){
+    try{
+      var params = new URLSearchParams(window.location.search);
+      var utms = {};
+      var temUtm = false;
+      LEDNEW_UTM_KEYS.forEach(function(k){
+        var v = params.get(k);
+        if(v){ utms[k] = String(v).slice(0, 150); temUtm = true; }
+      });
+      if(temUtm){
+        utms.landing_page = window.location.pathname || '/';
+        sessionStorage.setItem('lednew_utms', JSON.stringify(utms));
+      }
+    }catch(e){ /* silencioso: nunca quebrar a página por causa de UTM */ }
+  }
+
+  function lednewObterUTMs(){
+    try{
+      var raw = sessionStorage.getItem('lednew_utms');
+      return raw ? JSON.parse(raw) : null;
+    }catch(e){ return null; }
+  }
+
+  function lednewUrlImplantCheck(){
+    var base = 'implant-check.html';
+    var utms = lednewObterUTMs();
+    if(!utms) return base;
+    var params = new URLSearchParams();
+    Object.keys(utms).forEach(function(k){ if(utms[k]) params.set(k, utms[k]); });
+    var qs = params.toString();
+    return qs ? base + '?' + qs : base;
+  }
+
+  // Captura as UTMs assim que a página carrega
+  lednewCapturarUTMs();
+
   function toggleFaq(btn){
     var item = btn.closest('.faq-item');
     var wasOpen = item.classList.contains('open');
@@ -519,6 +558,15 @@
 
   function openImplantCheck(){
     var overlay = document.getElementById('implantCheckOverlay');
+    var frame = document.getElementById('implantCheckFrame');
+    // Aponta o iframe para a URL com as UTMs (só recarrega se ainda não tiver as UTMs)
+    if(frame){
+      var alvo = lednewUrlImplantCheck();
+      var atual = frame.getAttribute('src') || '';
+      if(atual.indexOf('utm_') === -1 && alvo.indexOf('utm_') !== -1){
+        frame.setAttribute('src', alvo);
+      }
+    }
     overlay.classList.add('is-open');
     overlay.setAttribute('aria-hidden','false');
     document.body.classList.add('implant-check-open');

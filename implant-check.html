@@ -551,6 +551,38 @@ const MODERATE_FLAGS = [
   "diabetesUnknownControl"
 ];
 
+// ===== UTMs (atribuição de marketing) lidas da URL =====
+function lednewLerUTMsDaURL(){
+  try{
+    var params = new URLSearchParams(window.location.search);
+    var out = {
+      utm_source: params.get('utm_source') || null,
+      utm_medium: params.get('utm_medium') || null,
+      utm_campaign: params.get('utm_campaign') || null,
+      utm_content: params.get('utm_content') || null,
+      landing_page: params.get('landing_page') || null
+    };
+    Object.keys(out).forEach(function(k){ if(out[k]) out[k] = String(out[k]).slice(0, 150); });
+    return out;
+  }catch(e){
+    return { utm_source:null, utm_medium:null, utm_campaign:null, utm_content:null, landing_page:null };
+  }
+}
+
+function lednewDerivarCanal(utmSource, utmMedium){
+  if(!utmSource && !utmMedium) return null;
+  var medium = (utmMedium || '').toLowerCase();
+  var source = (utmSource || '').toLowerCase();
+  if(medium.indexOf('paid') !== -1 || medium === 'cpc' || medium === 'ppc'){
+    if(source.indexOf('insta') !== -1 || source.indexOf('face') !== -1 || source.indexOf('meta') !== -1) return 'meta_ads';
+    if(source.indexOf('google') !== -1) return 'google_ads';
+    return 'paid';
+  }
+  if(medium === 'organic') return 'organic';
+  if(medium === 'referral') return 'referral';
+  return utmSource ? 'other' : null;
+}
+
 const state = {
   index:0,
   patient:{
@@ -839,11 +871,18 @@ async function enviarLeadImplantCheck(){
     return;
   }
 
+  const _utms = lednewLerUTMsDaURL();
   const payload = {
     p_nome: state.patient.firstName || null,
     p_telefone: state.patient.whatsapp || null,
     p_email: null,
-    p_resultado: state.clinicalResult || null
+    p_resultado: state.clinicalResult || null,
+    p_canal_aquisicao: lednewDerivarCanal(_utms.utm_source, _utms.utm_medium),
+    p_utm_source: _utms.utm_source,
+    p_utm_medium: _utms.utm_medium,
+    p_utm_campaign: _utms.utm_campaign,
+    p_utm_content: _utms.utm_content,
+    p_landing_page: _utms.landing_page
   };
   const leadKey = [
     payload.p_nome,
