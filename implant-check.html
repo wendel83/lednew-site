@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+<!-- Meta Pixel Code (sem PageView — evita duplicar no iframe) -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '3162729847450358');
+</script>
+<!-- End Meta Pixel Code -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lednew Implant Check | Avaliação preliminar para implantes</title>
@@ -632,6 +645,10 @@ function escapeHtml(v=""){
 function trackEvent(name,detail={}){
   try{
     window.dispatchEvent(new CustomEvent("lednew:implantcheck",{detail:{name,...detail}}));
+    // Mapeia para o Pixel da Meta (sem enviar dados clínicos — só o nome do evento)
+    if(window.fbq && name === "whatsapp_click"){
+      fbq("trackCustom", "WhatsAppClick");
+    }
   }catch(e){}
 }
 
@@ -906,6 +923,8 @@ async function enviarLeadImplantCheck(){
 
     state.leadSentKey = leadKey;
     console.log("Lead do Implant Check enviado com sucesso.");
+    // Evento Lead: só aqui, após confirmação de sucesso. Sem parâmetros (nenhum dado clínico).
+    if(window.fbq){ fbq("track", "Lead"); }
   }catch(error){
     console.error("Falha ao enviar lead do Implant Check:", error);
   }finally{
